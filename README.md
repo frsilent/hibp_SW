@@ -3,19 +3,27 @@
 
 # Installation
 
-> git clone https://github.com/frsilent/hibp_SW
-
-> cd hibp_SW
-
-> pip install -r requirements.txt
-
-> export LC_ALL=en_US.UTF-8
-
-> export LANG=en_US.UTF-8
-
-> python3 ./app.py
-
-> navigate to 127.0.0.1:5000
+```
+git clone https://github.com/frsilent/hibp_SW
+```
+```
+cd hibp_SW
+```
+```
+pip install -r requirements.txt
+```
+```
+export LC_ALL=en_US.UTF-8
+```
+```
+export LANG=en_US.UTF-8
+```
+```
+python3 ./app.py
+```
+```
+navigate to 127.0.0.1:5000
+```
 
 # Notes
 ```
@@ -35,7 +43,16 @@ but all existing logic could also be wrapped in another view/template; decided a
 # Setup
 
 ## Procfile can be used to setup heroku instance
-> git clone https://github.com/frsilent/hibp_SW
-> heroku create
-> git push heroku master
-> heroku open
+```
+git clone https://github.com/frsilent/hibp_SW
+```
+```
+```
+heroku create
+```
+```
+git push heroku master
+```
+```
+heroku open
+```
