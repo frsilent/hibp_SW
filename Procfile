@@ -1,1 +1,1 @@
-web: gunicorn hibp_secureworks.wsgi
+web: gunicorn wsgi
