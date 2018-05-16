@@ -47,7 +47,6 @@ but all existing logic could also be wrapped in another view/template; decided a
 git clone https://github.com/frsilent/hibp_SW
 ```
 ```
-```
 heroku create
 ```
 ```
