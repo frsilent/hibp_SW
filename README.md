@@ -34,4 +34,8 @@ but all existing logic could also be wrapped in another view/template; decided a
 
 # Setup
 
-> Procfile & wsgi included for heroku deployment
+> Procfile can be used to setup heroku instance
+``` git clone https://github.com/frsilent/hibp_SW```
+``` heroku create ```
+``` git push heroku master ```
+``` heroku open ```
