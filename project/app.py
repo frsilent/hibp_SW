@@ -5,8 +5,8 @@ from flasgger import Swagger
 
 DATABASE = './passwords.db'
 HIBP_URL = 'https://api.pwnedpasswords.com/pwnedpassword/'
-app = Flask(__name__)
-Swagger(app)
+application = Flask(__name__)
+Swagger(application)
 
 
 def get_db():
@@ -16,7 +16,7 @@ def get_db():
     return db
 
 
-@app.teardown_appcontext
+@application.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_passwords', None)
     if db is not None:
@@ -24,9 +24,9 @@ def close_connection(exception):
 
 
 def init_db():
-    with app.app_context():
+    with application.app_context():
         db = get_db()
-        with app.open_resource('schema.sql', mode='r') as f:
+        with application.open_resource('schema.sql', mode='r') as f:
             db.cursor().executescript(f.read())
         db.commit()
 
@@ -66,12 +66,12 @@ def hibp_api(password):
     return breaches
 
 
-@app.route('/')
+@application.route('/')
 def index():
     return redirect("/apidocs/#!/default/get_passwords_password", code=302)
 
 
-@app.route('/passwords/<password>', methods=['GET'])
+@application.route('/passwords/<password>', methods=['GET'])
 def check_password(password):
     """
     Service to check password breaches using HIBP's api
@@ -100,4 +100,9 @@ def check_password(password):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+
+    os.environ.setdefault("LC_ALL", "en_US.UTF-8")
+    os.environ.setdefault("LANG", "en_US.UTF-8")
+
+    application.run(debug=True)
