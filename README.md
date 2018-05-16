@@ -3,6 +3,10 @@
 
 # Installation
 
+> git clone https://github.com/frsilent/hibp_SW
+
+> cd hibp_SW
+
 > pip install -r requirements.txt
 
 > export LC_ALL=en_US.UTF-8
@@ -28,6 +32,6 @@ http://127.0.0.1:5000/apidocs/#!/default/get_passwords_password is used for huma
 but all existing logic could also be wrapped in another view/template; decided against duplicating module's work
 ```
 
+# Setup
 
-heroku create
-git push heroku master
+> Procfile & wsgi included for heroku deployment
